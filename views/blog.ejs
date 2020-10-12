@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Fancy - Creative Agency Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="/css/responsive/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="loader">
+            <span class="inner1"></span>
+            <span class="inner2"></span>
+            <span class="inner3"></span>
+        </div>
+    </div>
+
+    <!-- Search Form Area -->
+    <div class="fancy-search-form d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Close Btn -->
+                    <div class="search-close-btn" id="closeBtn">
+                        <i class="ti-close" aria-hidden="true"></i>
+                    </div>
+                    <!-- Form -->
+                    <form action="#" method="get">
+                        <input type="search" name="fancySearch" id="search" placeholder="| Enter Your Search...">
+                        <input type="submit" class="d-none" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <%- include('./partials/header.ejs') %>
+  <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Breadcumb Area Start ***** -->
+    <div class="fancy-breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcumb-content text-center">
+                        <h2>Recent News</h2>
+                        <!-- Breadcumb -->
+                        <nav>
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Archive</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Static Page</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Breadcumb Area End ***** -->
+
+    <!-- ****** Single Blog Area Start ****** -->
+    <section class="fancy-blog-area section-padding-100-70">
+            <div class="container">
+                <!-- <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading text-center">
+                            <h2>Latest News</h2>
+                            <p>We get to expose you to things around the world of technology.<br> We also show you our new company's offer for you about our services.</p>
+                        </div>
+                    </div>
+                </div> -->
+    
+                <div class="row">
+                    <% for(var i=0; i < blog.length; i++){  %>
+                    <!-- Single Blog -->
+                    <div class="col-12 col-md-4">
+                        <div class="single-blog-area wow fadeInUp" data-wow-delay="0.5s">
+                            <img src="<%= blog[i].imgUrl %>" alt="">
+                            <div class="blog-content">
+                                <h5><a href="/blog/<%= blog[i]._id %>"><%= blog[i].title %></a></h5>
+                                <p><%= blog[i].excerpt %></p>
+                                <a href="static-page.html">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% } %>
+                  
+               
+                </div>
+            </div>
+        </section>
+    <!-- ****** Single Blog Area End ****** -->
+
+       <!-- ***** Footer Area Start ***** -->
+       <%- include('./partials/footer.ejs') %>
+   
+       <!-- ***** Footer Area End ***** -->
+</body>
